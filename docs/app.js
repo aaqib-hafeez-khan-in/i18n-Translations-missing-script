@@ -60,7 +60,7 @@ function runDemo() {
 
   if (!en || !de || !fr || !it || !es || !pt || !nl || !ja || !zh) {
     bodyEl.innerHTML =
-      '<p style="color:#ff6b6b;font-size:0.9rem;">⚠️  One or more JSON files are invalid. Check your syntax.</p>';
+      '<p style="color:#ff6b6b;font-size:0.9rem;">One or more JSON files are invalid. Check your syntax.</p>';
     resultsEl.classList.remove("hidden");
     badgeEl.textContent = "JSON Error";
     badgeEl.className = "results-badge fail";
@@ -85,12 +85,12 @@ function runDemo() {
   let html = "";
 
   if (missed.length === 0) {
-    html += `<div class="result-ok">✅ All ${totalKeys} translation keys look good — no missing translations found!</div>`;
+    html += `<div class="result-ok">All ${totalKeys} translation keys look good — no missing translations found.</div>`;
   } else {
     missed.forEach(({ key, value, languages }) => {
       html += `
         <div class="result-row">
-          <div class="result-icon">❌</div>
+          <div class="result-icon">Missing</div>
           <div>
             <div class="result-key">${escHtml(key)}</div>
             <div class="result-val">"${escHtml(value)}"</div>
@@ -113,7 +113,7 @@ function runDemo() {
     badgeEl.textContent = `${missed.length} Missing`;
     badgeEl.className = "results-badge fail";
   } else {
-    badgeEl.textContent = "All Good ✓";
+    badgeEl.textContent = "All Good";
     badgeEl.className = "results-badge pass";
   }
 
