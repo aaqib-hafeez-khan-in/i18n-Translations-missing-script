@@ -9,7 +9,7 @@
 
 **A zero-config CLI tool that catches untranslated i18n keys before they reach production.**
 
-[🌐 Live Demo](https://aaqibhafeezkhan.github.io/i18n-Translations-missing-script/) · [📦 Sample Data](./sample/) · [🚀 Quick Start](#quick-start)
+[Live Demo](https://aaqibhafeezkhan.github.io/i18n-Translations-missing-script/) · [Sample Data](./sample/) · [Quick Start](#quick-start)
 
 </div>
 
@@ -25,9 +25,9 @@ every `<lang>.json` file in your i18n folder and surfaces exactly those keys.
 
 ```json
 // en.json  →  "msg.error": "Something went wrong."
-// de.json  →  "msg.error": "Something went wrong."   ← same as EN ✖
-// fr.json  →  "msg.error": "Something went wrong."   ← same as EN ✖
-// it.json  →  "msg.error": "Something went wrong."   ← same as EN ✖
+// de.json  →  "msg.error": "Something went wrong."   ← same as EN
+// fr.json  →  "msg.error": "Something went wrong."   ← same as EN
+// it.json  →  "msg.error": "Something went wrong."   ← same as EN
 ```
 
 ---
@@ -36,12 +36,12 @@ every `<lang>.json` file in your i18n folder and surfaces exactly those keys.
 
 | Feature                       | Details                                                     |
 | ----------------------------- | ----------------------------------------------------------- |
-| ⚡ **Zero config**            | Works out-of-the-box — just point it at your i18n folder    |
-| 🌐 **Any languages**          | Pass any comma-separated list of codes via `--langs`        |
-| 📋 **Whitelist support**      | Exclude keys like "Ok" that are intentionally identical     |
-| 📊 **Structured JSON report** | Stats + per-key details written to a report file            |
-| 🚦 **CI-ready exit code**     | Exits `1` when issues are found — blocks broken deployments |
-| 🎨 **Colourised output**      | Beautiful terminal output with summary table                |
+| **Zero config**               | Works out-of-the-box — just point it at your i18n folder    |
+| **Any languages**             | Pass any comma-separated list of codes via `--langs`        |
+| **Whitelist support**         | Exclude keys like "Ok" that are intentionally identical     |
+| **Structured JSON report**    | Stats + per-key details written to a report file            |
+| **CI-ready exit code**        | Exits `1` when issues are found — blocks broken deployments |
+| **Colourised output**         | Terminal output with per-key feedback and summary           |
 
 ---
 
@@ -160,7 +160,7 @@ The tool writes a structured JSON report at the path specified by `--output`:
 Add a step to your GitHub Actions workflow to block PRs with missing translations:
 
 ```yaml
-- name: 🔍 Check missing translations
+- name: Check missing translations
   run: |
     npm ci
     npm run build
